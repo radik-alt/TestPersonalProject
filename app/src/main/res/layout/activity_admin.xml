@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20sp"
+    tools:context=".UI_Admin.AdminActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Обновите данные"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Результаты тестирования"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Настроить расписание отправки результатов"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Аудио, видео, фото"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/setting_api"
+        android:layout_marginBottom="15sp"
+        android:text="Настройка API, FTP и почты"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Плеер"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginBottom="15sp"
+        android:text="Загрузка видео"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:paddingLeft="15sp"
+        android:gravity="left|center_vertical"
+        android:background="@drawable/edite_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_admin_button"/>
+
+
+
+</LinearLayout>

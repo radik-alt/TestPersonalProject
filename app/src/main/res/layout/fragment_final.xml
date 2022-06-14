@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20sp"
+    tools:context=".UI.FinalFragment">
+
+    <LinearLayout
+        android:layout_marginTop="100sp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_final"
+            android:src="@drawable/ic_sucess_test"
+            android:layout_width="wrap_content"
+            android:layout_height="200sp"/>
+
+        <TextView
+            android:id="@+id/result"
+            android:padding="15sp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="Тест успешно пройден"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/count_correct_answer"
+                android:textSize="18sp"
+                android:text="16"
+                android:textColor="@color/important_color"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/count_all_answer"
+                android:textSize="18sp"
+                android:text=" / 17"
+                android:textColor="@color/important_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/percent_count_answer"
+            android:padding="15sp"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
+            android:text="100%"
+            android:textStyle="bold"
+            android:textColor="@color/important_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/edite_text"
+            android:text="Результаты"
+            android:id="@+id/result_test"
+            android:paddingEnd="15sp"
+            android:paddingStart="15sp"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="@color/important_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ToHomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25sp"
+        android:background="@drawable/log_register_button"
+        android:text="Продолжить обучение"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+
+
+</RelativeLayout>
