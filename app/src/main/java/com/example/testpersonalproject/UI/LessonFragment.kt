@@ -1,11 +1,13 @@
 package com.example.testpersonalproject.UI
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.testpersonalproject.R
+import com.example.testpersonalproject.UI.Interface.OnListenerLesson
 import com.example.testpersonalproject.adapter.LessonViewPager.ViewPagerAdapter
 import com.example.testpersonalproject.databinding.FragmentLessonBinding
 import java.lang.RuntimeException
@@ -44,7 +46,11 @@ class LessonFragment : Fragment() {
 
 
         val viewPager = binding.imageSlide
-        viewPager.adapter = ViewPagerAdapter(listTemp)
+        viewPager.adapter = ViewPagerAdapter(listLesson, object : OnListenerLesson{
+            override fun checkLesson(lesson: Boolean) {
+                Log.d("MyCheckLesson", "True")
+            }
+        })
         binding.indicator.setViewPager(viewPager)
 
         return binding.root

@@ -9,5 +9,5 @@ import com.example.testpersonalproject.R
 class ViewPagerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val container = itemView.findViewById<LinearLayout>(R.id.container)
-//    val image = itemView.findViewById<ImageView>(R.id.image_lesson_item)
+    val image = itemView.findViewById<ImageView>(R.id.slide)
 }

@@ -5,34 +5,13 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.testpersonalproject.R
+import com.example.testpersonalproject.UI.Interface.OnListenerLesson
 
-class ViewPagerAdapter(val listImages: ArrayList<Int>) : RecyclerView.Adapter<ViewPagerHolder>() {
+class ViewPagerAdapter(val listImages: ArrayList<String>, val onListenerLesson: OnListenerLesson) : RecyclerView.Adapter<ViewPagerHolder>() {
 
     private lateinit var context: Context
-    private val colors = intArrayOf(
-        android.R.color.black,
-        android.R.color.holo_red_light,
-        android.R.color.holo_blue_dark,
-        android.R.color.holo_purple,
-        android.R.color.black,
-        android.R.color.holo_red_light,
-        android.R.color.holo_blue_dark,
-        android.R.color.holo_purple,
-        android.R.color.black,
-        android.R.color.holo_red_light,
-        android.R.color.holo_blue_dark,
-        android.R.color.holo_purple,
-        android.R.color.black,
-        android.R.color.holo_red_light,
-        android.R.color.holo_blue_dark,
-        android.R.color.holo_purple,
-        android.R.color.black,
-        android.R.color.holo_red_light,
-        android.R.color.holo_blue_dark,
-        android.R.color.holo_purple
-    )
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerHolder {
         context = parent.context
@@ -41,10 +20,13 @@ class ViewPagerAdapter(val listImages: ArrayList<Int>) : RecyclerView.Adapter<Vi
     }
 
     override fun onBindViewHolder(holder: ViewPagerHolder, position: Int) {
-        holder.container.setBackgroundResource(colors[position])
-//        holder.image.setImageResource(_listImages[position])
-//        Glide.with(context).load(_listImages[position]).into(holder.image)
+        Glide.with(context).load(listImages[position]).into(holder.image)
+
+        if (listImages.size == position){
+            onListenerLesson.checkLesson(true)
+        }
+
     }
 
-    override fun getItemCount(): Int = colors.size
+    override fun getItemCount(): Int = listImages.size
 }

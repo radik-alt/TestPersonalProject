@@ -26,7 +26,7 @@ class AllTestFragment : Fragment() {
     ): View {
         _binding = FragmentAllTestBinding.inflate(layoutInflater, container, false)
 
-
+        
 
         return binding.root
     }
