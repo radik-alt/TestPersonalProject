@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".UI.LessonFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
+     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/image_slide"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/indicator" />
+        android:layout_above="@+id/indicator"
+        android:orientation="horizontal" />
 
 
     <me.relex.circleindicator.CircleIndicator3

@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.testpersonalproject.R
+import com.example.testpersonalproject.UiAccount.*
 import com.example.testpersonalproject.adapter.AdapterItem.AdapterItem
-import com.example.testpersonalproject.UiAccount.ModelItem
-import com.example.testpersonalproject.UiAccount.ModelQuestion
-import com.example.testpersonalproject.UiAccount.ModelSubItem
-import com.example.testpersonalproject.UiAccount.ModelTest
 import com.example.testpersonalproject.databinding.FragmentHomeBinding
 
 
@@ -28,7 +25,7 @@ class HomeFragment : Fragment() {
         adapter()
 
         binding.allResult.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_testFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_allTestFragment)
         }
 
         return binding.root
@@ -39,17 +36,11 @@ class HomeFragment : Fragment() {
         val list: ArrayList<ModelItem> = ArrayList()
 
         val modelQuestion: ArrayList<ModelQuestion> = ArrayList()
-
         val list_question :ArrayList<String> = ArrayList()
-//        for (i in 0 until 20){
         list_question.add("Да, можно ")
         list_question.add("Нужно спросить разрешение в письменном виде у главного заведующего хозяйством производства, после чего посетить его лично и убедиться в правильности его ответа. После этого следовать приказу")
         list_question.add("Нет, нельзя ")
         list_question.add("Не знаю ")
-//            val listAnswer: Model_Item_Quest = Model_Item_Quest(i.toLong(), list_question)
-//            val temp = ModelQuestion(i.toLong(), )
-//            modelQuestion.add(temp)
-//        }
 
         val listTest: Array<ModelTest> = Array(20){ ModelTest(1, "", "", list_question, 1,  null, false) }
         for (i in 0 until 20){
@@ -70,7 +61,10 @@ class HomeFragment : Fragment() {
 
         val listLesson : ArrayList<String> = ArrayList()
         listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-
+        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
+        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
+        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
+        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
 
         val subList: ArrayList<ModelSubItem> = ArrayList()
         for (i in 0 until 10){
@@ -83,6 +77,8 @@ class HomeFragment : Fragment() {
             val model = ModelItem(1, "Text", subList, listTest)
             list.add(model)
         }
+
+        val modelHome : ModelHome = ModelHome(1, list)
 
         adapter.itemList = list
         binding.recyclerTest.adapter = adapter

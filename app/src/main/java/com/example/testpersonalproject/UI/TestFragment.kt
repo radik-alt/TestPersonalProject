@@ -1,5 +1,8 @@
 package com.example.testpersonalproject.UI
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testpersonalproject.UI.Interface.OnClickAnswer
+import com.example.testpersonalproject.UI.service.TimerTest
 import com.example.testpersonalproject.adapter.adapterQuestion.AdapterQuestion
 import com.example.testpersonalproject.adapter.adapterTest.AdapterTest
 import com.example.testpersonalproject.UiAccount.ModelTest
@@ -21,6 +25,7 @@ class TestFragment : Fragment() {
     private lateinit var binding: FragmentTestBinding
     private val args by navArgs<TestFragmentArgs>()
     private lateinit var listModelTest : ArrayList<ModelTest>
+
     private var indexTest = 0
     private var answerThis = 0
     private var isCompletedNotFull = false
@@ -32,7 +37,6 @@ class TestFragment : Fragment() {
         binding = FragmentTestBinding.inflate(layoutInflater, container, false)
 
         listModelTest = args.test.toList() as ArrayList<ModelTest>
-
         changeAdapter(indexTest)
 
         binding.nextQuestion.setOnClickListener {
@@ -78,6 +82,20 @@ class TestFragment : Fragment() {
         binding.descQuestion.text = descQuestion
         binding.question.adapter = adapterQuestion
     }
+
+    private val receiver = object : BroadcastReceiver(){
+        override fun onReceive(context: Context?, getIntent: Intent) {
+            val time = getIntent.getLongExtra(TimerTest.GET_INTENT_SERVICE, 0)
+
+            val seconds = (time / 1000) % 60
+            val minutes = ((time / (1000*60)) % 60)
+            val convertTimer = makeTimeString(minutes, seconds)
+            Log.d("TimeResultGet", convertTimer)
+        }
+    }
+
+    private fun makeTimeString(minutes: Long, second: Long): String =
+        String.format("%02d : %02d", minutes, second)
 
     private fun validBorderList(list:ArrayList<ModelTest>, index:Int) : Boolean{
         if (index < list.size-1) {

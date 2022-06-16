@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.testpersonalproject.R
 import com.example.testpersonalproject.UI.HomeFragmentDirections
 import com.example.testpersonalproject.UiAccount.ModelItem
@@ -36,8 +37,10 @@ class AdapterItem : RecyclerView.Adapter<ViewHolderItem>() {
         holder.click_expand.setOnClickListener {
             val area = holder.area_lesson
             if (area.visibility == View.VISIBLE){
+                Glide.with(context).load(R.drawable.ic_up_vector).into(holder.click_expand)
                 area.visibility = View.GONE
             } else {
+                Glide.with(context).load(R.drawable.ic_downtop).into(holder.click_expand)
                 area.visibility = View.VISIBLE
             }
         }

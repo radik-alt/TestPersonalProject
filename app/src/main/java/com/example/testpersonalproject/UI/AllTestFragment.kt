@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.testpersonalproject.R
+import com.example.testpersonalproject.adapter.AdapterItem.AdapterItem
 import com.example.testpersonalproject.databinding.FragmentAllTestBinding
 import java.lang.RuntimeException
 
@@ -26,7 +27,7 @@ class AllTestFragment : Fragment() {
     ): View {
         _binding = FragmentAllTestBinding.inflate(layoutInflater, container, false)
 
-        
+        binding.allResultTest.adapter = AdapterItem()
 
         return binding.root
     }

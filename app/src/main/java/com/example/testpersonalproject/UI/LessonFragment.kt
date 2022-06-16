@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 import com.example.testpersonalproject.R
 import com.example.testpersonalproject.UI.Interface.OnListenerLesson
 import com.example.testpersonalproject.adapter.LessonViewPager.ViewPagerAdapter
@@ -18,6 +20,7 @@ class LessonFragment : Fragment() {
     private val binding: FragmentLessonBinding
         get() = _binding ?: throw RuntimeException("FragmentLessonBinding == null")
 
+    private val args by navArgs<LessonFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,32 +33,21 @@ class LessonFragment : Fragment() {
     ): View {
         _binding = FragmentLessonBinding.inflate(layoutInflater, container, false)
 
+        val getList = args.itemLesson
+
         val listLesson : ArrayList<String> = ArrayList()
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-
-        val listTemp : ArrayList<Int> = ArrayList()
-        listTemp.add(R.mipmap.ic_launcher_round)
-        listTemp.add(R.mipmap.ic_launcher_round)
-        listTemp.add(R.mipmap.ic_launcher_round)
-        listTemp.add(R.mipmap.ic_launcher_round)
-        listTemp.add(R.mipmap.ic_launcher_round)
-
+        listLesson.addAll(getList.listLesson)
 
         val viewPager = binding.imageSlide
         viewPager.adapter = ViewPagerAdapter(listLesson, object : OnListenerLesson{
             override fun checkLesson(lesson: Boolean) {
-                Log.d("MyCheckLesson", "True")
+                getList.isCompleted = lesson
             }
         })
         binding.indicator.setViewPager(viewPager)
 
         return binding.root
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

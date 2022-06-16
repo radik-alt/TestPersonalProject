@@ -20,29 +20,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-
-
-        binding.next.setOnClickListener {
+        binding.russianLanguage.setOnClickListener {
             startActivity(Intent(this, LogInAccount::class.java))
         }
 
-
-
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_logout, menu);
-        return true;
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when (item.itemId){
-            R.id.logOut -> {
-                Toast.makeText(this, "LogOut", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
 }

@@ -35,7 +35,11 @@
         android:id="@+id/lessonFragment"
         android:name="com.example.testpersonalproject.UI.LessonFragment"
         android:label="fragment_lesson"
-        tools:layout="@layout/fragment_lesson" />
+        tools:layout="@layout/fragment_lesson" >
+        <argument
+            android:name="item_lesson"
+            app:argType="com.example.testpersonalproject.UiAccount.ModelSubItem" />
+    </fragment>
     <fragment
         android:id="@+id/finalFragment"
         android:name="com.example.testpersonalproject.UI.FinalFragment"

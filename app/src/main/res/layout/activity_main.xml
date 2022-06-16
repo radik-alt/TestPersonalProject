@@ -4,16 +4,297 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/second_color"
     tools:context=".MainActivity">
 
-    <Button
+    <GridLayout
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/next"
-        android:textAllCaps="false"
-        android:text="next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:onClick="@{()-> viewModel.btnClick()}"
+                android:id="@+id/russian_language"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_russian" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Русский"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_kyrgyzstan" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="Кыргызча"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_columnWeight="1"
+            android:layout_width="130sp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_english" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="English"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </GridLayout>
+
 
 
 </RelativeLayout>

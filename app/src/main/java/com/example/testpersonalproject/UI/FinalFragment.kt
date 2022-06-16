@@ -59,16 +59,17 @@ class FinalFragment : Fragment() {
             binding.countAllAnswer.setTextColor(winColor)
             binding.countCorrectAnswer.setTextColor(winColor)
             binding.percentCountAnswer.setTextColor(winColor)
-            binding.resultTest.text = "Тест пройден"
+            binding.result.text = "Тест успешно пройден!"
             binding.imageFinal.setImageResource(imageWin)
-            binding.ToHomeFragment.text = "Повторить попытку"
+            binding.ToHomeFragment.text = "Продолжить обучение"
         } else {
             binding.countAllAnswer.setTextColor(loseColor)
             binding.countCorrectAnswer.setTextColor(loseColor)
             binding.percentCountAnswer.setTextColor(loseColor)
-            binding.resultTest.text = "Тест не пройден"
+            binding.result.text = "Тест не пройден!"
             binding.ToHomeFragment.text = "Продолжить обучение"
             binding.imageFinal.setImageResource(imageLose)
+            binding.ToHomeFragment.text = "Повторить попытку"
         }
 
         binding.resultTest.setOnClickListener {

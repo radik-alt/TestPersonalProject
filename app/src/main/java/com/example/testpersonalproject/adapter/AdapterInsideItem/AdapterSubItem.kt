@@ -1,13 +1,16 @@
 package com.example.testpersonalproject.adapter.AdapterInsideItem
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testpersonalproject.R
+import com.example.testpersonalproject.UI.HomeFragmentDirections
 import com.example.testpersonalproject.UiAccount.ModelSubItem
+import com.example.testpersonalproject.UiAccount.ModelTest
 
 class AdapterSubItem : RecyclerView.Adapter<ViewHolderSubItem>() {
 
@@ -34,7 +37,8 @@ class AdapterSubItem : RecyclerView.Adapter<ViewHolderSubItem>() {
         }
 
         btn.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_lessonFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToLessonFragment(subList[position])
+            Navigation.findNavController(it).navigate(action)
         }
 
     }
