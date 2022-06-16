@@ -73,12 +73,14 @@ class HomeFragment : Fragment() {
         }
 
 
-        for (i in 0 until 10){
+        for (i in 0 until 2) {
             val model = ModelItem(1, "Text", subList, listTest)
             list.add(model)
         }
 
-        val modelHome : ModelHome = ModelHome(1, list)
+        for (i in 0 until 10) {
+            val modelHome : ModelHome = ModelHome(1, list)
+        }
 
         adapter.itemList = list
         binding.recyclerTest.adapter = adapter
