@@ -12,12 +12,7 @@ import com.example.testpersonalproject.UI.HomeFragmentDirections
 import com.example.testpersonalproject.UiAccount.ModelSubItem
 import com.example.testpersonalproject.UiAccount.ModelTest
 
-class AdapterSubItem : RecyclerView.Adapter<ViewHolderSubItem>() {
-
-    var subList: ArrayList<ModelSubItem> = ArrayList()
-    set(value) {
-        field.addAll(value)
-    }
+class AdapterSubItem (var subList: ArrayList<ModelSubItem>): RecyclerView.Adapter<ViewHolderSubItem>() {
 
     private lateinit var context: Context
 

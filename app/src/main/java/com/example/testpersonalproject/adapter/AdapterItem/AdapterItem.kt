@@ -4,23 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testpersonalproject.R
-import com.example.testpersonalproject.UI.HomeFragmentDirections
-import com.example.testpersonalproject.UiAccount.ModelItem
-import com.example.testpersonalproject.UiAccount.ModelSubItem
-import com.example.testpersonalproject.adapter.AdapterInsideItem.AdapterSubItem
+import com.example.testpersonalproject.adapter.AdapterSubItemTop.AdapteTopSubItem
+import com.example.testpesonalproject.UiAccount.ModelHome
 
-class AdapterItem : RecyclerView.Adapter<ViewHolderItem>() {
+class AdapterItem (var itemList : ArrayList<ModelHome>) : RecyclerView.Adapter<ViewHolderItem>() {
 
-    var itemList : ArrayList<ModelItem> = ArrayList<ModelItem>()
-    set(value) {
-        field.addAll(value)
-    }
 
     private lateinit var context: Context
 
@@ -32,7 +23,6 @@ class AdapterItem : RecyclerView.Adapter<ViewHolderItem>() {
 
     override fun onBindViewHolder(holder: ViewHolderItem, position: Int) {
 
-        holder.title.text = itemList[position].nameThemes
 
         holder.click_expand.setOnClickListener {
             val area = holder.area_lesson
@@ -45,21 +35,25 @@ class AdapterItem : RecyclerView.Adapter<ViewHolderItem>() {
             }
         }
 
-        val list = itemList[position].list_lesson
-        val subItem = AdapterSubItem()
-        subItem.subList = itemList[position].list_lesson as ArrayList<ModelSubItem>
-        holder.inside_recycler.adapter = subItem
+        holder.inside_recycler.adapter = AdapteTopSubItem(itemList[position].itemList)
 
-        if (list.size <= 4) {
-            holder.inside_recycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        } else {
-            holder.inside_recycler.layoutManager = GridLayoutManager(context, 4)
-        }
+//        val list = itemList[position].list_lesson
+//        val subItem = AdapterSubItem()
+//        subItem.subList = itemList[position].list_lesson as ArrayList<ModelSubItem>
+//        holder.inside_recycler.adapter = subItem
+//
+//        if (list.size <= 4) {
+//            holder.inside_recycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+//        } else {
+//            holder.inside_recycler.layoutManager = GridLayoutManager(context, 4)
+//        }
+//
+//        holder.test_lesson.setOnClickListener {
+//            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(itemList[position].listTest)
+//            Navigation.findNavController(it).navigate(action)
+//        }
 
-        holder.test_lesson.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(itemList[position].listTest)
-            Navigation.findNavController(it).navigate(action)
-        }
+
 
     }
 

@@ -9,7 +9,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.testpersonalproject.R
 import com.example.testpersonalproject.UiAccount.*
 import com.example.testpersonalproject.adapter.AdapterItem.AdapterItem
+import com.example.testpersonalproject.adapter.AdapterSubItemTop.AdapteTopSubItem
 import com.example.testpersonalproject.databinding.FragmentHomeBinding
+import com.example.testpersonalproject.statObject
+import com.example.testpesonalproject.UiAccount.ModelHome
 
 
 class HomeFragment : Fragment() {
@@ -32,57 +35,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun adapter(){
-        val adapter = AdapterItem()
-        val list: ArrayList<ModelItem> = ArrayList()
 
-        val modelQuestion: ArrayList<ModelQuestion> = ArrayList()
-        val list_question :ArrayList<String> = ArrayList()
-        list_question.add("Да, можно ")
-        list_question.add("Нужно спросить разрешение в письменном виде у главного заведующего хозяйством производства, после чего посетить его лично и убедиться в правильности его ответа. После этого следовать приказу")
-        list_question.add("Нет, нельзя ")
-        list_question.add("Не знаю ")
+        val statObject = statObject.Companion
+        statObject.adapter()
+        val modelHome = statObject.modelHome
 
-        val listTest: Array<ModelTest> = Array(20){ ModelTest(1, "", "", list_question, 1,  null, false) }
-        for (i in 0 until 20){
-            val list_question2 :ArrayList<String> = ArrayList()
-            list_question2.add("Да, можно $i")
-            list_question2.add("Нужно спросить разрешение в письменном виде у главного заведующего хозяйством производства, после чего посетить его лично и убедиться в правильности его ответа. После этого следовать приказу")
-            list_question2.add("Нет, нельзя $i")
-            list_question2.add("Не знаю $i")
-            val test = ModelTest(i.toLong(), "Задча ${i+1}",
-                "Можно ли снимать таблички с красным текстом «Не включать! Работают люди», если работы ещё не закончены, но люди уже не в помещении?",
-                list_question2,
-                1,
-                null,
-                false
-            )
-            listTest[i] = test
-        }
-
-        val listLesson : ArrayList<String> = ArrayList()
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-        listLesson.add("https://avatars.mds.yandex.net/get-zen_doc/1581245/pub_5ff74f3ef906b16872346899_5ff74f67f906b1687234a757/scale_1200")
-
-        val subList: ArrayList<ModelSubItem> = ArrayList()
-        for (i in 0 until 10){
-            val subModel = ModelSubItem(1, "Тест ${i+1}", false, listLesson)
-            subList.add(subModel)
-        }
-
-
-        for (i in 0 until 2) {
-            val model = ModelItem(1, "Text", subList, listTest)
-            list.add(model)
-        }
-
-        for (i in 0 until 10) {
-            val modelHome : ModelHome = ModelHome(1, list)
-        }
-
-        adapter.itemList = list
-        binding.recyclerTest.adapter = adapter
+        binding.recyclerTest.adapter = AdapterItem(modelHome)
     }
 }

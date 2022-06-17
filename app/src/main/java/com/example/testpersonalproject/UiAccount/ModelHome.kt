@@ -1,4 +1,6 @@
-package com.example.testpersonalproject.UiAccount
+package com.example.testpesonalproject.UiAccount
+
+import com.example.testpersonalproject.UiAccount.ModelItem
 
 data class ModelHome(
     val id: Long,

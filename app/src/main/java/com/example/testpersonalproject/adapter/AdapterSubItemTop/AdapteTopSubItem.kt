@@ -3,15 +3,16 @@ package com.example.testpersonalproject.adapter.AdapterSubItemTop
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testpersonalproject.R
-import com.example.testpersonalproject.UiAccount.ModelHome
+import com.example.testpersonalproject.UI.HomeFragmentDirections
 import com.example.testpersonalproject.UiAccount.ModelItem
 import com.example.testpersonalproject.adapter.AdapterInsideItem.AdapterSubItem
 
-class AdapteTopSubItem(val topListSub: ArrayList<ModelHome>) : RecyclerView.Adapter<ViewHolderTopSubItem>() {
+class AdapteTopSubItem(val topListSub: ArrayList<ModelItem>) : RecyclerView.Adapter<ViewHolderTopSubItem>() {
 
     private lateinit var context : Context
 
@@ -22,19 +23,19 @@ class AdapteTopSubItem(val topListSub: ArrayList<ModelHome>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolderTopSubItem, position: Int) {
 
+        holder.name.text = topListSub[position].nameThemes
+        holder.recycler.adapter = AdapterSubItem(topListSub[position].list_lesson)
 
-//        holder.recycler.adapter = AdapterSubItem(topListSub[position].list_lesson)
-
-        if (topListSub.size <= 4) {
+        if (topListSub[position].list_lesson.size <= 4) {
             holder.recycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         } else {
             holder.recycler.layoutManager = GridLayoutManager(context, 4)
         }
 
-//        holder.test_lesson.setOnClickListener {
-//            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(itemList[position].listTest)
-//            Navigation.findNavController(it).navigate(action)
-//        }
+        holder.test.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(topListSub[position].listTest)
+            Navigation.findNavController(it).navigate(action)
+        }
 
     }
 

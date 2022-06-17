@@ -27,7 +27,7 @@ class AllTestFragment : Fragment() {
     ): View {
         _binding = FragmentAllTestBinding.inflate(layoutInflater, container, false)
 
-        binding.allResultTest.adapter = AdapterItem()
+        binding.allResultTest.adapter
 
         return binding.root
     }
