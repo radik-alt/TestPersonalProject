@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.testpersonalproject.R
 import com.example.testpersonalproject.UI.HomeFragmentDirections
 import com.example.testpersonalproject.UiAccount.ModelItem
+import com.example.testpersonalproject.UiAccount.ModelTest
 import com.example.testpersonalproject.adapter.AdapterInsideItem.AdapterSubItem
 
 class AdapteTopSubItem(val topListSub: ArrayList<ModelItem>) : RecyclerView.Adapter<ViewHolderTopSubItem>() {
@@ -33,7 +34,7 @@ class AdapteTopSubItem(val topListSub: ArrayList<ModelItem>) : RecyclerView.Adap
         }
 
         holder.test.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(topListSub[position].listTest)
+            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(topListSub[position].listTest.toArray() as Array<ModelTest>)
             Navigation.findNavController(it).navigate(action)
         }
 

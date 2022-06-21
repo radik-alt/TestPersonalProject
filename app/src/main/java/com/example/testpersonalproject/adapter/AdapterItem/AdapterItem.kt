@@ -12,7 +12,6 @@ import com.example.testpesonalproject.UiAccount.ModelHome
 
 class AdapterItem (var itemList : ArrayList<ModelHome>) : RecyclerView.Adapter<ViewHolderItem>() {
 
-
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderItem {
@@ -36,24 +35,6 @@ class AdapterItem (var itemList : ArrayList<ModelHome>) : RecyclerView.Adapter<V
         }
 
         holder.inside_recycler.adapter = AdapteTopSubItem(itemList[position].itemList)
-
-//        val list = itemList[position].list_lesson
-//        val subItem = AdapterSubItem()
-//        subItem.subList = itemList[position].list_lesson as ArrayList<ModelSubItem>
-//        holder.inside_recycler.adapter = subItem
-//
-//        if (list.size <= 4) {
-//            holder.inside_recycler.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-//        } else {
-//            holder.inside_recycler.layoutManager = GridLayoutManager(context, 4)
-//        }
-//
-//        holder.test_lesson.setOnClickListener {
-//            val action = HomeFragmentDirections.actionHomeFragmentToTestFragment(itemList[position].listTest)
-//            Navigation.findNavController(it).navigate(action)
-//        }
-
-
 
     }
 

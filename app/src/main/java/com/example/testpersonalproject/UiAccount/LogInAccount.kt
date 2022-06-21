@@ -21,6 +21,7 @@ class LogInAccount : AppCompatActivity() {
 
         binding.backLogIN.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
 
         binding.enterLogIN.setOnClickListener {
@@ -39,6 +40,7 @@ class LogInAccount : AppCompatActivity() {
 
         binding.register.setOnClickListener {
             startActivity(Intent(this, RegisterAccount::class.java))
+            finish()
         }
 
     }

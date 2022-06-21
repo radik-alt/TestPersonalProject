@@ -49,6 +49,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -64,6 +65,7 @@
 
 
             <EditText
+                android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -86,6 +88,7 @@
                 android:background="@drawable/edite_text"
                 android:hint="Отчетство: "
                 android:maxLines="1"
+                android:id="@+id/patronymic"
                 android:padding="15sp"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
@@ -102,6 +105,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/position_job"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -117,6 +121,7 @@
 
 
             <EditText
+                android:id="@+id/division"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -158,6 +163,7 @@
 
 
             <EditText
+                android:id="@+id/number_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
@@ -183,6 +189,7 @@
             android:layout_margin="20sp">
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/log_register_button"

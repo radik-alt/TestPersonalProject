@@ -27,7 +27,7 @@ class TestFragment : Fragment() {
     private lateinit var listModelTest : ArrayList<ModelTest>
 
     private var indexTest = 0
-    private var answerThis = 0
+    private var answerThis = -1
     private var isCompletedNotFull = false
 
     override fun onCreateView(
@@ -97,6 +97,7 @@ class TestFragment : Fragment() {
     private fun makeTimeString(minutes: Long, second: Long): String =
         String.format("%02d : %02d", minutes, second)
 
+
     private fun validBorderList(list:ArrayList<ModelTest>, index:Int) : Boolean{
         if (index < list.size-1) {
             return true
@@ -109,7 +110,6 @@ class TestFragment : Fragment() {
         val arr : Array<ModelTest> = Array(listModelTest.size) { listModelTest[0] }
         for (i in listModelTest.indices){
             arr[i] = listModelTest[i]
-            Log.d("MyArrayFragment", "$i ${listModelTest[i]}")
         }
 
         val action = TestFragmentDirections.actionTestFragmentToFinalFragment(arr)

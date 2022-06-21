@@ -4,5 +4,6 @@ data class ModelItem (
     var id: Long,
     val nameThemes: String,
     var list_lesson : ArrayList<ModelSubItem>,
-    val listTest : Array<ModelTest>
+    val isCompletedTest : Boolean,
+    val listTest : ArrayList<ModelTest>
 )

@@ -18,16 +18,23 @@ import com.example.testpesonalproject.UiAccount.ModelHome
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var modelHome: ArrayList<ModelHome>
 
-    override fun onCreateView(
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
+        val statObject = statObject.Companion
+        statObject.adapter()
+        modelHome = statObject.modelHome
+
         adapter()
 
+
         binding.allResult.setOnClickListener {
+//            HomeFragmentDirections.actionHomeFragmentToAllTestFragment(modelHome.toArray() as Array<ModelHome>)
             findNavController().navigate(R.id.action_homeFragment_to_allTestFragment)
         }
 
@@ -35,10 +42,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun adapter(){
-
-        val statObject = statObject.Companion
-        statObject.adapter()
-        val modelHome = statObject.modelHome
 
         binding.recyclerTest.adapter = AdapterItem(modelHome)
     }
