@@ -14,6 +14,5 @@ class ViewHolderItem(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val percent_item = itemView.findViewById<TextView>(R.id.percent)
     val click_expand = itemView.findViewById<ImageButton>(R.id.click_expand)
     val area_lesson = itemView.findViewById<LinearLayout>(R.id.area_lesson)
-    val inside_recycler = itemView.findViewById<RecyclerView>(R.id.inside_recycler)
-    val test_lesson = itemView.findViewById<AppCompatButton>(R.id.test_lesson)
+    val inside_recycler = itemView.findViewById<RecyclerView>(R.id.general_recycler)
 }

@@ -14,7 +14,7 @@ class AdapterQuestion(list: ArrayList<String>, private val onClickAnswer: OnClic
     init {
         questionList = list
     }
-
+    private var enabledAnswer = true
     private lateinit var context: Context
 
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): ViewHolderQuestion {
@@ -29,8 +29,12 @@ class AdapterQuestion(list: ArrayList<String>, private val onClickAnswer: OnClic
         answer.text = model
 
         answer.setOnClickListener {
-            answer.background = ContextCompat.getDrawable(context, R.drawable.right_choose_question)
-            onClickAnswer.chooseAnswer(position)
+            if (enabledAnswer) {
+                notifyItemChanged(position)
+                answer.background = ContextCompat.getDrawable(context, R.drawable.right_choose_question)
+                onClickAnswer.chooseAnswer(position)
+                enabledAnswer = false
+            }
         }
 
     }

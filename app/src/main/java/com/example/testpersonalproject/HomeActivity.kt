@@ -1,10 +1,13 @@
 package com.example.testpersonalproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.testpersonalproject.UiAccount.LogInAccount
+import com.example.testpersonalproject.UiAccount.RegisterAccount
 import com.example.testpersonalproject.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -27,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
 
         when (item.itemId){
             R.id.logOut -> {
-                Toast.makeText(this, "LogOut", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LogInAccount::class.java))
             }
         }
 

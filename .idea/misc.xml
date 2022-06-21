@@ -36,9 +36,13 @@
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/item_lesson.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/item_lesson_image.xml" value="0.2" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/item_quastion_list.xml" value="0.33" />
+        <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/item_result_test.xml" value="0.25" />
+        <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/item_sub.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/list_question.xml" value="0.2" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/sub_item_lesson.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/sub_item_result_test.xml" value="0.33" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/themse_lesson.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/layout/top_sub_item_result.xml" value="0.25" />
         <entry key="..\:/Users/Radik/AndroidStudioProjects/TestPersonalProject/app/src/main/res/menu/menu_logout.xml" value="0.20416666666666666" />
       </map>
     </option>
